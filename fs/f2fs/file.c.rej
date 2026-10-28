@@ -1,0 +1,31 @@
+diff a/fs/f2fs/file.c b/fs/f2fs/file.c	(rejected hunks)
+@@ -1857,6 +1862,9 @@ static int f2fs_ioc_start_atomic_write(struct file *filp)
+ 	struct f2fs_sb_info *sbi = F2FS_I_SB(inode);
+ 	int ret;
+ 
++	if (!(filp->f_mode & FMODE_WRITE))
++		return -EBADF;
++
+ 	if (!inode_owner_or_capable(inode))
+ 		return -EACCES;
+ 
+@@ -2000,6 +2014,9 @@ static int f2fs_ioc_release_volatile_write(struct file *filp)
+ 	struct inode *inode = file_inode(filp);
+ 	int ret;
+ 
++	if (!(filp->f_mode & FMODE_WRITE))
++		return -EBADF;
++
+ 	if (!inode_owner_or_capable(inode))
+ 		return -EACCES;
+ 
+@@ -2029,6 +2046,9 @@ static int f2fs_ioc_abort_volatile_write(struct file *filp)
+ 	struct inode *inode = file_inode(filp);
+ 	int ret;
+ 
++	if (!(filp->f_mode & FMODE_WRITE))
++		return -EBADF;
++
+ 	if (!inode_owner_or_capable(inode))
+ 		return -EACCES;
+ 

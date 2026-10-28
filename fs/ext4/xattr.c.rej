@@ -1,0 +1,10 @@
+diff a/fs/ext4/xattr.c b/fs/ext4/xattr.c	(rejected hunks)
+@@ -1033,7 +1033,7 @@ static int ext4_xattr_inode_update_ref(handle_t *handle, struct inode *ea_inode,
+ 	s64 ref_count;
+ 	int ret;
+ 
+-	inode_lock(ea_inode);
++	inode_lock_nested(ea_inode, I_MUTEX_XATTR);
+ 
+ 	ret = ext4_reserve_inode_write(handle, ea_inode, &iloc);
+ 	if (ret)

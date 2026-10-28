@@ -1,0 +1,9 @@
+diff a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c	(rejected hunks)
+@@ -257,6 +257,7 @@ void tmc_free_sg_table(struct tmc_sg_table *sg_table)
+ {
+ 	tmc_free_table_pages(sg_table);
+ 	tmc_free_data_pages(sg_table);
++	kfree(sg_table);
+ }
+ 
+ /*

@@ -1,0 +1,11 @@
+diff a/drivers/clocksource/timer-of.c b/drivers/clocksource/timer-of.c	(rejected hunks)
+@@ -42,9 +39,6 @@ static __init void timer_of_irq_exit(struct of_timer_irq *of_irq)
+  * - Get interrupt number by name
+  * - Get interrupt number by index
+  *
+- * When the interrupt is per CPU, 'request_percpu_irq()' is called,
+- * otherwise 'request_irq()' is used.
+- *
+  * Returns 0 on success, < 0 otherwise
+  */
+ static __init int timer_of_irq_init(struct device_node *np,
