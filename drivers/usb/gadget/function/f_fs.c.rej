@@ -1,9 +1,0 @@
-diff a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c	(rejected hunks)
-@@ -827,6 +827,7 @@ static void ffs_user_copy_worker(struct work_struct *work)
- 	int ret = io_data->req->status ? io_data->req->status :
- 					 io_data->req->actual;
- 	bool kiocb_has_eventfd = io_data->kiocb->ki_flags & IOCB_EVENTFD;
-+	unsigned long flags;
- 
- 	if (io_data->read && ret > 0) {
- 		mm_segment_t oldfs = get_fs();
