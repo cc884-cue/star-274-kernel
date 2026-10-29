@@ -1,0 +1,4 @@
+467d30181c6f5d1dd1ab6cd3f8bc47c6b075b29863e2ed53074adace2f152dc2  Image-5.4.274-star-ksu
+934c6185b0c5bfbd86a115d4175b9522479dcdaad1b4f0cc6fcc0068b5f44e3d  boot-5.4.274-star-ksu.img
+3f4b6660144e05a3d029fc2f15d8be7f3ec9d8f3f0ca6c03bb832c0bd91f977b  Star-5.4.274-star-ksu-AnyKernel3.zip
+00421d6b92f0cde94205e15ee36a4dfd209885cca6b81804a4ff065a56555ca7  config-5.4.274-star-ksu.txt

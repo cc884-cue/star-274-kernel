@@ -12,7 +12,25 @@ Target ROM: **OS2.0.7.0.UKACNXM** (Android 14 / SDK 34), stock kernel `5.4.274-q
 
 ---
 
-## Two builds
+## 🆕 KernelSU build — `v5.4.274-ksu`
+
+[Release `v5.4.274-ksu`](https://github.com/cc884-cue/star-274-kernel/releases/tag/v5.4.274-ksu) adds **KernelSU** and aligns the config with ikun's 5.4.302 `build_venus.sh`.
+Same `star` source tree, same kernel-only scope.
+
+| | value |
+|---|---|
+| Image | 46,973,440 B |
+| banner | `5.4.274-VK-Y+` |
+| KernelSU | `ReSukiSU` `d5e9e02`, `CONFIG_KSU=y`, manual hook + 3 auto LSM hooks |
+| SuSFS | **not enabled** — ikun's is v2.1.0, public `susfs4ksu` 5.4 stops at v1.5.5 |
+| LTO / THINLTO | on |
+| vs ikun 302 config | 2056 enabled vs 2034; 59 ours-only / 37 theirs-only |
+
+See [`REPORT-star-ksu.md`](REPORT-star-ksu.md) for the full delta table and the SuSFS explanation.
+
+---
+
+## Two builds (v5.4.274, no KernelSU)
 
 | | **star** (recommended) | **los** |
 |---|---|---|
