@@ -594,7 +594,7 @@ ssize_t ksys_read(unsigned int fd, char __user *buf, size_t count)
 
 SYSCALL_DEFINE3(read, unsigned int, fd, char __user *, buf, size_t, count)
 {
-#if defined(CONFIG_KSU) && !defined(CONFIG_KSU_MANUAL_HOOK_AUTO_INITRC_HOOK)
+#ifdef CONFIG_KSU
 	extern int ksu_handle_sys_read(unsigned int fd,
 				       char __user **buf_ptr,
 				       size_t *count_ptr);
